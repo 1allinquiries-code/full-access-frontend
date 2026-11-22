@@ -787,7 +787,6 @@ h1{font-size:52px!important}
 
 <div id="testBanner" class="test-banner" hidden></div>
 
-<div id="salePill" class="sale" hidden>End of year sale</div>
 
 <div class="brand">Fam &amp; Friends Trading</div>
 
@@ -1099,7 +1098,6 @@ h1{font-size:52px!important}
     $('planToggle').hidden = sale;
     $('priceBox').hidden = sale;
     $('deal').hidden = !sale;
-    $('salePill').hidden = !sale;
     $('payLabel').textContent = (testKey && testOn) ? 'Send test application' : (sale ? 'Pay $100 now' : 'Pay now');
     paintPlan();
   }
