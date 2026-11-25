@@ -777,7 +777,17 @@ h1{font-size:52px!important}
 .mp-x{position:fixed;top:max(14px,env(safe-area-inset-top));right:16px;z-index:100;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.7);color:#fff;font:600 24px system-ui;display:none;align-items:center;justify-content:center}
 .mp-lb.on+.mp-x{display:flex}
 </style>
-<style id="tradeHelp">.th{display:flex;flex-direction:column;gap:22px;align-items:stretch}.th-t{max-width:680px;margin:0 auto;text-align:center}.th-t p{margin:0;font-size:18px;line-height:1.55;color:#0B2D1D}.th-t p+p{margin-top:12px;font-weight:600;color:#0F4D33}.th-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}@media(max-width:720px){.th-g{grid-template-columns:minmax(0,1fr)}}html.tB .th-t p{color:#F4F6FA}html.tB .th-t p+p{color:#9AF5CB}</style>
+<style id="tradeHelp">.th{display:flex;flex-direction:column;gap:22px;align-items:stretch}.th-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}@media(max-width:720px){.th-g{grid-template-columns:minmax(0,1fr)}}</style>
+<style id="trialCss">
+.trial{width:100%;min-height:62px;display:flex;align-items:center;justify-content:center;background:transparent;color:#14603F;border:2px solid #1A6E49;border-radius:999px;font:inherit;font-size:19px;font-weight:600;letter-spacing:-.2px;cursor:pointer;margin-top:12px;text-decoration:none;box-sizing:border-box}
+@media(min-width:960px){.trial{min-height:52px!important}}
+.trial:active{transform:scale(.99)}
+#trialNote{margin-top:10px;text-align:center}
+html.tB .trial{color:#9AF5CB;border-color:#9AF5CB}
+html.tB #trialNote{color:#9AF5CB}
+.th-line{margin:0 auto 18px;text-align:center;font-size:19px;line-height:1.4;font-weight:600;color:#14603F}
+html.tB .th-line{color:#9AF5CB}
+</style>
 </head>
 <body>
 
@@ -823,7 +833,7 @@ h1{font-size:52px!important}
 
 <div id="deal" class="deal" hidden>
 <div class="lab">One-time fee</div>
-<div class="amt"><b>$100</b><span>one time</span></div>
+<div class="amt"><b>$250</b><span>one time</span></div>
 <div class="sm">Pay once, no monthly billing</div>
 </div>
 
@@ -837,6 +847,9 @@ h1{font-size:52px!important}
 </div>
 <div id="payNote" class="note" role="status" hidden></div>
 </div>
+<button id="trialBtn" class="trial" type="button">Start free trial</button>
+<a id="trialOpen" class="trial" href="https://discord.com/channels/@me" target="_blank" rel="noopener" hidden>Open Discord</a>
+<div id="trialNote" class="note" role="status" hidden></div>
 <button class="cue" id="cue" type="button"><span>See what's included</span><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
 </div>
 </div>
@@ -873,7 +886,7 @@ h1{font-size:52px!important}
 
 <div class="feat-body">
 <div class="fbs">
-<div class="th rv" id="f-help"><div class="th-t"><p>I share the trades I am taking, with the details. A buy or sell alert only tells you what to click. I share the whole trade: why I took it, what I am looking for, a stop loss and price target.</p><p>I share my trades to teach. This is not financial advice.</p></div><div class="th-g"><div class="wc"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 11h6M9 14h4"/></svg></span><h3>Trade Assistance</h3><p>Ask me about a trade you are planning or already in. You get an answer from a real person, who looks at the levels with you.</p></div><div class="wc"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="M7 15l4-4 3 3 5-6"/></svg></span><h3>Trade Review</h3><p>Show me a trade that did not work. We go through it together to find what went wrong. Then you know what to do differently next time.</p></div></div></div>
+<div class="th rv" id="f-help"><p class="th-line">Try it free for 3 days before you pay.</p><div class="th-g"><div class="wc"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 11h6M9 14h4"/></svg></span><h3>Trade Assistance</h3><p>Ask me about a trade you are planning or already in. You get an answer from a real person, who looks at the levels with you.</p></div><div class="wc"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="M7 15l4-4 3 3 5-6"/></svg></span><h3>Trade Review</h3><p>Show me a trade that did not work. We go through it together to find what went wrong. Then you know what to do differently next time.</p></div></div></div>
 <article class="fb" id="f-pre" data-f="pre">
 <div class="bt rv"><div class="wc">
 <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18h16M7 18a5 5 0 0 1 10 0M12 5v3M5.2 9.2l2 2M18.8 9.2l-2 2"/></svg></span><h3>Pre-Market Plan, every trading morning</h3>
@@ -986,7 +999,7 @@ h1{font-size:52px!important}
 </div>
 </section>
 
-<section class="faq" id="faq"><div class="faq-in rv"><h2>Frequently asked questions</h2><div class="qs"><div class="qa"><button class="q" type="button" aria-expanded="false"><span>Do you send buy and sell alerts?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>No. You get the levels and the plan. Every morning the update says where price must hold, what it must clear, and what to do if it does or doesn't. During the day, each update says whether a level was defended, cleared, reclaimed, or lost. You choose your own entries, so you know why you are in every trade.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>How do I pay?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>You can pay with Cash App or PayPal. It costs $50 a month or $300 a year. Enter your Discord username, choose a plan, tap Pay now, and pick Cash App or PayPal. Your page then shows Waiting for confirmation until your payment is confirmed.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>I'm new to trading. Can I follow along?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>We welcome traders of all levels of experience.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>How soon do I get access?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>An invite is sent as soon as your payment is confirmed. You must join with the same Discord account you entered, within 24 hours of receiving the invite. Full access starts once you join.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>How do I cancel?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>Reach out to me by DM.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>How do I renew?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>Three days before your plan ends, the bot sends you a DM with a link to pay again. Two days after your plan ends, Full Access is removed if you have not paid again.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>Do you offer refunds?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>All sales are final. Access is digital and given as soon as your payment is confirmed, so we do not offer refunds. Please read this page fully before you pay.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>Do I need a Discord account?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>Yes. You must have a Discord account to join. Discord is free on iPhone, Android, and desktop.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>Who do I contact if something goes wrong?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>Use the chat on this page, or DM me in the server.</p></div></div></div></div></div></section>
+<section class="faq" id="faq"><div class="faq-in rv"><h2>Frequently asked questions</h2><div class="qs"><div class="qa"><button class="q" type="button" aria-expanded="false"><span>Do you send buy and sell alerts?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>No. You get the levels and the plan. Every morning the update says where price must hold, what it must clear, and what to do if it does or doesn't. During the day, each update says whether a level was defended, cleared, reclaimed, or lost. You choose your own entries, so you know why you are in every trade.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>How do I pay?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>You can pay with Cash App or PayPal. Enter your Discord username,<span class="chp"> choose a plan,</span> tap Pay now, and pick Cash App or PayPal. Your page then shows Waiting for confirmation until your payment is confirmed.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>I'm new to trading. Can I follow along?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>We welcome traders of all levels of experience.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>How soon do I get access?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>An invite is sent as soon as your payment is confirmed. You must join with the same Discord account you entered, within 24 hours of receiving the invite. Full access starts once you join.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>How do I cancel?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>Reach out to me by DM.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>How do I renew?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>Three days before your plan ends, the bot sends you a DM with a link to pay again. Two days after your plan ends, Full Access is removed if you have not paid again.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>Do you offer refunds?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>All sales are final. Access is digital and given as soon as your payment is confirmed, so we do not offer refunds. Please read this page fully before you pay.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>Do I need a Discord account?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>Yes. You must have a Discord account to join. Discord is free on iPhone, Android, and desktop.</p></div></div></div><div class="qa"><button class="q" type="button" aria-expanded="false"><span>Who do I contact if something goes wrong?</span><i class="pl"></i></button><div class="an"><div class="an-in"><p>Use the chat on this page, or DM me in the server.</p></div></div></div></div></div></section>
 
 <footer class="fine">
 <div class="fine-in">
@@ -997,7 +1010,7 @@ h1{font-size:52px!important}
 <a class="tlink" id="termsLink" href="#terms">Terms</a>
 </div>
 </footer>
-<div class="tp" id="tp" role="dialog" aria-modal="true" aria-label="Terms" hidden><div class="tp-top"><h2>Terms</h2><button class="tp-x" id="tpx" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div><div class="tp-in"><section class="tt"><h3>How do I pay?</h3><p>You can pay with Cash App or PayPal. It costs $50 a month or $300 a year. Enter your Discord username, choose a plan, tap Pay now, and pick Cash App or PayPal. Your page then shows Waiting for confirmation until your payment is confirmed.</p></section><section class="tt"><h3>How soon do I get access?</h3><p>An invite is sent as soon as your payment is confirmed. You must join with the same Discord account you entered, within 24 hours of receiving the invite. Full access starts once you join.</p></section><section class="tt"><h3>How do I cancel?</h3><p>Reach out to me by DM.</p></section><section class="tt"><h3>How do I renew?</h3><p>Three days before your plan ends, the bot sends you a DM with a link to pay again. Two days after your plan ends, Full Access is removed if you have not paid again.</p></section><section class="tt"><h3>Do you offer refunds?</h3><p>All sales are final. Access is digital and given as soon as your payment is confirmed, so we do not offer refunds. Please read this page fully before you pay.</p></section></div></div>
+<div class="tp" id="tp" role="dialog" aria-modal="true" aria-label="Terms" hidden><div class="tp-top"><h2>Terms</h2><button class="tp-x" id="tpx" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div><div class="tp-in"><section class="tt"><h3>How do I pay?</h3><p>You can pay with Cash App or PayPal. Enter your Discord username,<span class="chp"> choose a plan,</span> tap Pay now, and pick Cash App or PayPal. Your page then shows Waiting for confirmation until your payment is confirmed.</p></section><section class="tt"><h3>How soon do I get access?</h3><p>An invite is sent as soon as your payment is confirmed. You must join with the same Discord account you entered, within 24 hours of receiving the invite. Full access starts once you join.</p></section><section class="tt"><h3>How do I cancel?</h3><p>Reach out to me by DM.</p></section><section class="tt"><h3>How do I renew?</h3><p>Three days before your plan ends, the bot sends you a DM with a link to pay again. Two days after your plan ends, Full Access is removed if you have not paid again.</p></section><section class="tt"><h3>Do you offer refunds?</h3><p>All sales are final. Access is digital and given as soon as your payment is confirmed, so we do not offer refunds. Please read this page fully before you pay.</p></section></div></div>
 <div class="pb" id="pb" hidden><button id="pbBtn" type="button">Pay now</button></div>
 
 
@@ -1008,7 +1021,7 @@ h1{font-size:52px!important}
   var cfg = window.FFIG || {};
   var API = String(cfg.API || '').replace(/\/+$/, '');
   var PLANS = {
-    onetime: { amount: 100, text: '$100 one time' },
+    onetime: { amount: 250, text: '$250 one time' },
     monthly: { amount: 50, text: '$50 per month' },
     yearly: { amount: 300, text: '$300 per year' }
   };
@@ -1023,7 +1036,7 @@ h1{font-size:52px!important}
   if (params.get('test')) sessionStorage.setItem('ffig_test', testKey);
 
   var plan = 'monthly';
-  var sale = false; // set by the server: true while the end of year sale is on
+  var sale = false; // set by the server: true while the one-time payment is on
   var verified = false;
   var dvToken = '';
   var typing = false;
@@ -1100,7 +1113,8 @@ h1{font-size:52px!important}
     $('planToggle').hidden = sale;
     $('priceBox').hidden = sale;
     $('deal').hidden = !sale;
-    $('payLabel').textContent = (testKey && testOn) ? 'Send test application' : (sale ? 'Pay $100 now' : 'Pay now');
+    [].forEach.call(document.querySelectorAll('.chp'), function (e) { e.hidden = sale; });
+    $('payLabel').textContent = (testKey && testOn) ? 'Send test application' : (sale ? 'Pay $250 now' : 'Pay now');
     paintPlan();
   }
   function reveal() { $('buy').style.visibility = 'visible'; }
@@ -1190,6 +1204,28 @@ h1{font-size:52px!important}
   if (params.get('dverr')) {
     history.replaceState(null, '', location.pathname + (testKey ? '?test=' + encodeURIComponent(testKey) : ''));
     setStatus('Discord login did not work. Type your username instead.', '#9B1C1C', '#D98A8A');
+  }
+
+  // ---------- free trial ----------
+  var TRIAL_MSG = {
+    young: "A free trial needs a Discord account that is at least 1 year old. Your account is newer, so we can't start a trial.",
+    used: 'You already used your free trial.',
+    err: "We couldn't confirm your Discord account. Please try again.",
+    ok: 'Your free trial has started. Tap below to open Discord.'
+  };
+  $('trialBtn').addEventListener('click', function () {
+    location.href = API + '/api/trial/start' + (testKey ? '?test=' + encodeURIComponent(testKey) : '');
+  });
+  var trialBack = params.get('trial');
+  if (trialBack && TRIAL_MSG[trialBack]) {
+    history.replaceState(null, '', location.pathname + (testKey ? '?test=' + encodeURIComponent(testKey) : ''));
+    $('trialNote').textContent = TRIAL_MSG[trialBack];
+    $('trialNote').hidden = false;
+    if (trialBack === 'ok') {
+      $('trialBtn').hidden = true;
+      $('trialOpen').hidden = false;
+    }
+    setTimeout(function () { $('trialNote').scrollIntoView({ block: 'center' }); }, 300);
   }
 
   // ---------- paying ----------
@@ -1365,6 +1401,7 @@ h1{font-size:52px!important}
       testOn = !!c.test;
       configLoaded = true;
       guildId = c.guildId || '';
+      $('trialOpen').href = 'https://discord.com/channels/' + (guildId || '@me');
       sale = !!c.sale;
       $('loginBlock').hidden = !loginEnabled || verified;
       render();
